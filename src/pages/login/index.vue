@@ -14,7 +14,7 @@
 <script>
 import { reactive, toRefs } from 'vue'
 import Taro from '@tarojs/taro'
-
+import { login } from '../../api/login'
 export default {
   name: 'index',
   components: {},
@@ -28,7 +28,9 @@ export default {
     })
 
     const handleClick = (type, msg, cover = false) => {
-      Taro.navigateBack()
+      login().then(res => {
+        console.log(res)
+      })
     }
 
     return {
