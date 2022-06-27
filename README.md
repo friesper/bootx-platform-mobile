@@ -1,10 +1,10 @@
-# Bootx-mobile(v0.1.0)
+# Bootx-Platform-Mobile(v0.1.0)
 
 ## Bootx-Platform的小程序端
 
 ## 🍈项目介绍
 
- 基于[Taro框架](https://docs.taro.zone/docs)+[VUE3](https://v3.cn.vuejs.org/guide/introduction.html)+[NUTui](https://nutui.jd.com/)打造
+ 基于[Taro框架](https://docs.taro.zone/docs) + [VUE3](https://v3.cn.vuejs.org/guide/introduction.html) + [NUTui](https://nutui.jd.com/) 打造
 
  前端项目地址：[前端项目(vue2)](https://gitee.com/bootx/bootx-platform-ui)
  
