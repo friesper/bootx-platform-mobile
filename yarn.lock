@@ -1304,7 +1304,7 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@nutui/nutui-taro@^3.1.8":
+"@nutui/nutui-taro@^3.1.22":
   version "3.1.22"
   resolved "https://registry.npmmirror.com/@nutui/nutui-taro/-/nutui-taro-3.1.22.tgz#0eba35599718e034274142bc8fc711f2d050ead2"
   integrity sha512-KB0TbUulHGPDmXrQuhJbVxocjDgzedOYfcggnR8b8ctSXOb+cA6K23kSJUoC1qrExBrSINd1ZjUyjdrRkHSGVw==
