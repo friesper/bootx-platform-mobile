@@ -11,6 +11,7 @@
 <script>
 import { reactive, toRefs } from 'vue'
 import Taro from '@tarojs/taro'
+import { Button } from '@nutui/nutui-taro'
 
 export default {
   name: 'Index',
