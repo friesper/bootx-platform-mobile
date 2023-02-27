@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro'
-
+Taro.addInterceptor(Taro.interceptors.logInterceptor)
+Taro.addInterceptor(Taro.interceptors.timeoutInterceptor)
 
 export function post(uri, data) {
   return new Promise((resolve, reject) => {
@@ -11,9 +12,10 @@ export function post(uri, data) {
       },
       method: 'POST',
       success: function(res) {
-        resolve(res.data)
+        handlerResponse(resolve,res)
       },
       fail: function(res) {
+        console.log(res)
         reject(res)
       }
     })
@@ -29,7 +31,7 @@ export function get(uri, data) {
       data: data,
       method: 'GET',
       success: function(res) {
-        resolve(res.data)
+        handlerResponse(resolve,res)
       },
       fail: function(res) {
         reject(res)
@@ -44,11 +46,18 @@ export function postData(uri, data) {
       data: data,
       method: 'POST',
       success: function(res) {
-        resolve(res.data)
+        handlerResponse(resolve,res)
       },
       fail: function(res) {
         reject(res)
       }
     })
   })
+}
+ function handlerResponse (resolve,response){
+  if(response.data.code==10004){
+    Taro.redirectTo({url:"/pages/login/index"})
+}else{
+  resolve(response.data)
+}
 }
