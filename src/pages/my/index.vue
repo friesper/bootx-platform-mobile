@@ -1,36 +1,42 @@
 <template>
   <view class="login">
     <view>
-      <img src alt />
+      <nut-cell center :desc="userInfo.name" size="large" :isLink="true">
+        <template v-slot:icon>
+          <nut-avatar size="100" @click="handleClick">
+            <img src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+          </nut-avatar>
+        </template>
+      </nut-cell>
     </view>
-    {{ msg }}
-    <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)">点我2</nut-button>
-    </view>
-    <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
   </view>
 </template>
 
 <script>
 import { reactive, toRefs } from 'vue'
 import Taro from '@tarojs/taro'
+import { My } from '@nutui/icons-vue-taro'
+import { getUserBaseInfo } from '../../api/system/user'
 
 export default {
   name: 'index',
-  components: {},
+  components: { My },
   setup() {
     const state = reactive({
-      msg: '登录页面',
+      msg: '我的',
       msg2: '你成功了～',
       type: 'text',
       show: false,
-      cover: false
+      cover: false,
+      userInfo: {}
     })
 
     const handleClick = (type, msg, cover = false) => {
       Taro.navigateBack()
     }
-
+    getUserBaseInfo().then(res => {
+      state.userInfo = res.data
+    })
     return {
       ...toRefs(state),
       handleClick

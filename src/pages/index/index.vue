@@ -4,9 +4,6 @@
       <img src alt />
     </view>
     {{ msg }}
-    <view class="btn">
-      <nut-button type="primary" @click="handleClick('text', msg2, true)">点我</nut-button>
-    </view>
     <nut-toast :msg="msg" v-model:visible="show" :type="type" :cover="cover" />
   </view>
 </template>
@@ -14,6 +11,7 @@
 <script>
 import { reactive, toRefs } from 'vue'
 import Taro from '@tarojs/taro'
+import { Button } from '@nutui/nutui-taro'
 
 export default {
   name: 'Index',
@@ -21,7 +19,6 @@ export default {
   setup() {
     const state = reactive({
       msg: '首页',
-      msg2: '你成功了～',
       type: 'text',
       show: false,
       cover: false

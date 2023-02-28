@@ -1,3 +1,5 @@
+import ComponentsPlugin from 'unplugin-vue-components/webpack'
+import NutUIResolver from '@nutui/nutui-taro/dist/resolver'
 const config = {
   projectName: 'bootx-mobile',
   date: '2022-6-24',
@@ -11,16 +13,13 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
   },
   framework: 'vue3',
-  sass:{
+  sass: {
     data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
   },
   mini: {
@@ -44,6 +43,13 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain) {
+      chain.plugin('unplugin-vue-components').use(
+        ComponentsPlugin({
+          resolvers: [NutUIResolver({ taro: true })]
+        })
+      )
     }
   },
   h5: {
@@ -53,8 +59,7 @@ const config = {
     postcss: {
       autoprefixer: {
         enable: true,
-        config: {
-        }
+        config: {}
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -63,11 +68,18 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain) {
+      chain.plugin('unplugin-vue-components').use(
+        ComponentsPlugin({
+          resolvers: [NutUIResolver({ taro: true })]
+        })
+      )
     }
   }
 }
 
-module.exports = function (merge) {
+module.exports = function(merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'))
   }
