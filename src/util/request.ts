@@ -7,12 +7,12 @@ export function post(uri, data) {
     Taro.request({
       url: process.env.API_URL + uri,
       data: data,
-      header:{
-        "AccessToken":Taro.getStorageSync('accessToken')
+      header: {
+        AccessToken: Taro.getStorageSync('accessToken')
       },
       method: 'POST',
       success: function(res) {
-        handlerResponse(resolve,res)
+        handlerResponse(resolve, reject, res)
       },
       fail: function(res) {
         console.log(res)
@@ -25,13 +25,13 @@ export function get(uri, data) {
   return new Promise((resolve, reject) => {
     Taro.request({
       url: process.env.API_URL + uri,
-      header:{
-        "AccessToken":Taro.getStorageSync('accessToken')
+      header: {
+        AccessToken: Taro.getStorageSync('accessToken')
       },
       data: data,
       method: 'GET',
       success: function(res) {
-        handlerResponse(resolve,res)
+        handlerResponse(resolve, reject, res)
       },
       fail: function(res) {
         reject(res)
@@ -46,7 +46,7 @@ export function postData(uri, data) {
       data: data,
       method: 'POST',
       success: function(res) {
-        handlerResponse(resolve,res)
+        handlerResponse(resolve, reject, res)
       },
       fail: function(res) {
         reject(res)
@@ -54,10 +54,12 @@ export function postData(uri, data) {
     })
   })
 }
- function handlerResponse (resolve,response){
-  if(response.data.code==10004){
-    Taro.redirectTo({url:"/pages/login/index"})
-}else{
-  resolve(response.data)
-}
+function handlerResponse(resolve, reject, response) {
+  if (response.data.code == 10004) {
+    Taro.redirectTo({ url: '/pages/login/index' })
+  } else if (response.data.code != 0) {
+    reject(response.data.msg)
+  } else {
+    resolve(response.data)
+  }
 }

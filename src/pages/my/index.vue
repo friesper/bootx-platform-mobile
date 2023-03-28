@@ -1,13 +1,18 @@
-<template>
+<template >
   <view class="login">
     <view>
       <nut-cell center :desc="userInfo.name" size="large" :isLink="true">
         <template v-slot:icon>
-          <nut-avatar size="100" @click="handleClick">
+          <nut-avatar size="50" @click="handleClick">
             <img src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
           </nut-avatar>
         </template>
       </nut-cell>
+      <nut-cell title="修改密码"></nut-cell>
+      <nut-cell title="关于我们"></nut-cell>
+    </view>
+    <view style="margin-top: 90%;margin-left: 20px;margin-right:20px">
+      <nut-button size="large" type="primary">退出登录</nut-button>
     </view>
   </view>
 </template>
@@ -50,6 +55,5 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 </style>

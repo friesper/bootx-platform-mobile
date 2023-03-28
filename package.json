@@ -44,7 +44,8 @@
     "@tarojs/runtime": "3.4.12",
     "@tarojs/taro": "3.4.12",
     "flyio": "^0.6.14",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
