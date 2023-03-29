@@ -10,3 +10,8 @@ export function getUserBaseInfo() {
 export function pageByReceive(params) {
   return get('/site/message/pageByReceive', params)
 }
+
+const updatePassword = (password: string, newPassword: string) => {
+  return postData('/user/updatePassword' + '?password=' + password + '&newPassword=' + newPassword, null)
+}
+export { updatePassword }

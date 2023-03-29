@@ -44,6 +44,9 @@ export function postData(uri, data) {
     Taro.request({
       url: process.env.API_URL + uri,
       data: data,
+      header: {
+        AccessToken: Taro.getStorageSync('accessToken')
+      },
       method: 'POST',
       success: function(res) {
         handlerResponse(resolve, reject, res)

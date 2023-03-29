@@ -8,11 +8,11 @@
           </nut-avatar>
         </template>
       </nut-cell>
-      <nut-cell title="修改密码"></nut-cell>
+      <nut-cell @click="goToModifyPassword" title="修改密码"></nut-cell>
       <nut-cell title="关于我们"></nut-cell>
     </view>
     <view style="margin-top: 90%;margin-left: 20px;margin-right:20px">
-      <nut-button size="large" type="primary">退出登录</nut-button>
+      <nut-button @click="logout" block type="primary">退出登录</nut-button>
     </view>
   </view>
 </template>
@@ -39,12 +39,23 @@ export default {
     const handleClick = (type, msg, cover = false) => {
       Taro.navigateBack()
     }
+    const logout = () => {
+      Taro.removeStorageSync('accessToken')
+      Taro.navigateTo({
+        url: '/pages/login/index'
+      })
+    }
     getUserBaseInfo().then(res => {
       state.userInfo = res.data
     })
+    const goToModifyPassword = () => {
+      Taro.navigateTo({ url: '/pages/my/modifyPassword' })
+    }
     return {
       ...toRefs(state),
-      handleClick
+      handleClick,
+      goToModifyPassword,
+      logout
     }
   }
 }
