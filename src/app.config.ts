@@ -1,9 +1,9 @@
 export default defineAppConfig({
-  pages: ['pages/index/index', 'pages/cart/index', 'pages/login/index', 'pages/my/index', 'pages/my/modifyPassword'],
+  pages: ['pages/index/index', 'pages/workspace/index', 'pages/login/index', 'pages/my/index', 'pages/my/modifyPassword', 'pages/my/personInfo/index'],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarBackgroundColor: '#ffff',
+    navigationBarTitleText: '首页',
     navigationBarTextStyle: 'black'
   },
   tabBar: {
@@ -14,7 +14,7 @@ export default defineAppConfig({
     borderStyle: 'black',
     list: [
       { pagePath: 'pages/index/index', text: '首页', iconPath: 'static/icon/首页.png', selectedIconPath: 'static/icon/首页.png' },
-      { pagePath: 'pages/cart/index', text: '工作台', iconPath: 'static/icon/更多.png', selectedIconPath: 'static/icon/更多.png' },
+      { pagePath: 'pages/workspace/index', text: '工作台', iconPath: 'static/icon/更多.png', selectedIconPath: 'static/icon/更多.png' },
       { pagePath: 'pages/my/index', text: '我的', iconPath: 'static/icon/我的.png', selectedIconPath: 'static/icon/我的.png' }
     ]
   }

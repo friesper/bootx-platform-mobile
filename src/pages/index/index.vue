@@ -3,10 +3,9 @@
     <nut-noticebar direction="vertical" :list="horseLamp1" :speed="10" :standTime="1000" @click="go" :close-mode="true"></nut-noticebar>
     <nut-swiper :init-page="page" :pagination-visible="true" pagination-color="#426543" auto-play="3000">
       <nut-swiper-item v-for="item in list" :key="item">
-        <img :src="item" alt />
+        <img :src="item" />
       </nut-swiper-item>
     </nut-swiper>
-    <view>das</view>
     <view class="echarts">
       <ec-canvas id="chart-dom-area" canvas-id="chart-area" :ec="ec"></ec-canvas>
     </view>
@@ -114,7 +113,9 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;

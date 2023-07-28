@@ -14,6 +14,8 @@ declare module '@vue/runtime-core' {
     NutCell: typeof import('@nutui/nutui-taro')['Cell']
     NutForm: typeof import('@nutui/nutui-taro')['Form']
     NutFormItem: typeof import('@nutui/nutui-taro')['FormItem']
+    NutGrid: typeof import('@nutui/nutui-taro')['Grid']
+    NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
     NutInput: typeof import('@nutui/nutui-taro')['Input']
     NutNoticebar: typeof import('@nutui/nutui-taro')['Noticebar']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
