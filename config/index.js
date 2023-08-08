@@ -1,5 +1,6 @@
 import ComponentsPlugin from 'unplugin-vue-components/webpack'
 import NutUIResolver from '@nutui/nutui-taro/dist/resolver'
+const path = require('path')
 const config = {
   projectName: 'bootx-mobile',
   date: '2022-6-24',
@@ -13,6 +14,13 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
+  alias: {
+    '@/component': path.resolve(__dirname, '..', 'src/component'),
+    '@/util': path.resolve(__dirname, '..', 'src/util'),
+    '@/package': path.resolve(__dirname, '..', 'package.json'),
+    '@/project': path.resolve(__dirname, '..', 'project.config.json'),
+    '@/static': path.resolve(__dirname, '..', 'src/static')
+  },
   defineConstants: {},
   copy: {
     patterns: [],
@@ -20,7 +28,7 @@ const config = {
   },
   framework: 'vue3',
   sass: {
-    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
+    data: `@import "@nutui/nutui-taro/dist/styles/variables-jdt.scss";`
   },
   mini: {
     postcss: {

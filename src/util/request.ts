@@ -60,8 +60,6 @@ export function postData(uri, data) {
 function handlerResponse(resolve, reject, response) {
   if (response.data.code == 10004) {
     Taro.redirectTo({ url: '/pages/login/index' })
-  } else if (response.data.code != 0) {
-    reject(response.data.msg)
   } else {
     resolve(response.data)
   }

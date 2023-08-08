@@ -14,13 +14,17 @@
     "strictNullChecks": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "paths": {
+      "@/component/*": ["./src/component/*"],
+      "@/util/*": ["./src/util/*"],
+      "@/package": ["./package.json"],
+      "@/project": ["./project.config.json"]
+    },
     "rootDir": ".",
     "jsx": "react",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   },
   "include": ["./src", "global.d.ts"],
   "compileOnSave": false

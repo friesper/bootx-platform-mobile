@@ -3,9 +3,10 @@
     <template v-for="(item, index) in itemList" :key="index">
       <h2>{{ item.moduleName }}</h2>
       <nut-grid :gutter="5">
-        <nut-grid-item v-for="(subitem,subIndex) in item.subList" :key="subIndex" :text="subitem.name" @click="handleClick(subitem)">
+        <nut-grid-item v-for="(subitem, subIndex) in item.subList" :key="subIndex" :text="subitem.name"
+          @click="handleClick(subitem)">
           <slot name="icon">
-            <IconFont :name="subitem.icon" />
+            <IconFont font-class-name="iconfont" class-prefix="icon" :name="subitem.icon" />
           </slot>
         </nut-grid-item>
       </nut-grid>
@@ -33,13 +34,13 @@ export default {
       show: false,
       cover: false,
       itemList: [
-        { moduleName: '业务管理', subList: [{ name: '日报', icon: 'dongdong', url: null }] },
+        { moduleName: '业务管理', subList: [{ name: '日报', icon: 'ribao', url: null }] },
         {
           moduleName: '流程中心',
           subList: [
             {
               name: 'OA审批',
-              icon: 'https://img.ixintu.com/download/jpg/20201226/e5214b5dbbf48609c52c8fb02231a227_512_512.jpg',
+              icon: 'tianshenpi',
               url: '/pages/my/personInfo/index'
             }
           ]
@@ -65,5 +66,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

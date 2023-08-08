@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1656251574537') format('truetype');
+  font-family: "iconfont"; /* Project id 3485653 */
+  src: url('iconfont.woff2?t=1691048368349') format('woff2'),
+       url('iconfont.woff?t=1691048368349') format('woff'),
+       url('iconfont.ttf?t=1691048368349') format('truetype');
 }
 
 .iconfont {
@@ -9,6 +11,126 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yanzhengyanzhengma:before {
+  content: "\e624";
+}
+
+.icon-tianshenpi:before {
+  content: "\eb67";
+}
+
+.icon-gongzuotai:before {
+  content: "\e609";
+}
+
+.icon-ribao:before {
+  content: "\ea3f";
+}
+
+.icon-shequ:before {
+  content: "\e8b8";
+}
+
+.icon-good:before {
+  content: "\e6bb";
+}
+
+.icon-slice:before {
+  content: "\e6d9";
+}
+
+.icon-trash:before {
+  content: "\e6dd";
+}
+
+.icon-wallet:before {
+  content: "\e6e0";
+}
+
+.icon-icon-test:before {
+  content: "\e64d";
+}
+
+.icon-approval:before {
+  content: "\e613";
+}
+
+.icon-department:before {
+  content: "\e614";
+}
+
+.icon-exit:before {
+  content: "\e603";
+}
+
+.icon-group:before {
+  content: "\e604";
+}
+
+.icon-modify:before {
+  content: "\e605";
+}
+
+.icon-statistics:before {
+  content: "\e606";
+}
+
+.icon-scan:before {
+  content: "\e607";
+}
+
+.icon-person-information:before {
+  content: "\e608";
+}
+
+.icon-shouye:before {
+  content: "\ee13";
+}
+
+.icon-saoyisao:before {
+  content: "\ee17";
+}
+
+.icon-wode:before {
+  content: "\ee19";
+}
+
+.icon-shezhi:before {
+  content: "\ee1a";
+}
+
+.icon-fenlei:before {
+  content: "\ee1b";
+}
+
+.icon-zhuanzhang:before {
+  content: "\10111";
+}
+
+.icon-gengduo:before {
+  content: "\1010f";
+}
+
+.icon-women:before {
+  content: "\10110";
+}
+
+.icon-zhifubao:before {
+  content: "\e600";
+}
+
+.icon-wechat:before {
+  content: "\e601";
+}
+
+.icon-qiyeweixin:before {
+  content: "\e6af";
+}
+
+.icon-dingdingdingd:before {
+  content: "\e7c0";
 }
 
 .icon-user:before {
