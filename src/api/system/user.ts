@@ -14,4 +14,8 @@ export function pageByReceive(params) {
 const updatePassword = (password: string, newPassword: string) => {
   return postData('/user/updatePassword' + '?password=' + password + '&newPassword=' + newPassword, null)
 }
-export { updatePassword }
+
+const addFeedBack = (data: object) => {
+  return postData('/feedback/add', data)
+}
+export { updatePassword, addFeedBack }

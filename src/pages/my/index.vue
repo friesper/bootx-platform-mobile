@@ -29,9 +29,9 @@
           <view class="iconfont icon-slice text-mauve icon"></view>
           <text class="text">订单</text>
         </view>
-        <view class="action-item" @click="handleBuilding">
+        <view class="action-item" @click="handleFeedBack">
           <view class="iconfont icon-icon-test text-blue icon"></view>
-          <text class="text">客服</text>
+          <text class="text">反馈</text>
         </view>
         <view class="action-item" @click="handleBuilding">
           <view class="iconfont icon-heart text-green icon"></view>
@@ -105,6 +105,9 @@ export default {
     const goToModifyPassword = () => {
       Taro.navigateTo({ url: '/pages/my/modifyPassword' })
     }
+    const handleFeedBack = () => {
+      Taro.navigateTo({ url: '/pages/my/feedback/add' })
+    }
     const sacnCode = () => {
       Taro.scanCode({
         onlyFromCamera: true,
@@ -128,7 +131,7 @@ export default {
       goToPersonInfo,
       goToModifyPassword,
       logout,
-      sacnCode, iamgePreview
+      sacnCode, iamgePreview, handleFeedBack
     }
   }
 }

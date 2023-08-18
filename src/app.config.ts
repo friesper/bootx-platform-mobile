@@ -1,9 +1,12 @@
 export default defineAppConfig({
   pages: [
+    'pages/report/index',
+    'pages/my/index',
     'pages/index/index',
     'pages/workspace/index',
     'pages/login/index',
-    'pages/my/index',
+    'pages/my/feedback/index',
+    'pages/my/feedback/add',
     'pages/my/modifyPassword',
     'pages/my/personInfo/index'
   ],

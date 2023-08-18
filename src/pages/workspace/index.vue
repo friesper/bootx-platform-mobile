@@ -33,8 +33,9 @@ export default {
       type: 'text',
       show: false,
       cover: false,
+      //可以通过权限接口方式来填充这个List，以实现对工作台页面的项目的控制,其中的url是需要预先开发好的页面
       itemList: [
-        { moduleName: '业务管理', subList: [{ name: '日报', icon: 'ribao', url: null }] },
+        { moduleName: '业务管理', subList: [{ name: '日报', icon: 'ribao', url: null }, { name: '结算台', icon: 'slice', url: '' }] },
         {
           moduleName: '流程中心',
           subList: [

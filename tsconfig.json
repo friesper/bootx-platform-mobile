@@ -17,6 +17,7 @@
     "paths": {
       "@/component/*": ["./src/component/*"],
       "@/util/*": ["./src/util/*"],
+      "@/api/*": ["./src/util/*"],
       "@/package": ["./package.json"],
       "@/project": ["./project.config.json"]
     },
